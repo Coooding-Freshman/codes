@@ -14,7 +14,7 @@ void print(int **arr){
     char buffer[5000];
     sprintf(buffer, "%s", "\n\n\n\n");
     sprintf(buffer, "%s                  2048 by lzh\n\r", buffer);
-    sprintf(buffer, "%s              score: %d  Highest: %d\n\r", buffer, score, Highest);
+    sprintf(buffer, "%s        score: %5d   Highest: %5d\n\r", buffer, score, Highest);
     for(int i = 0; i < LEN; ++i){
         sprintf(buffer, "%s        -----------------------------\n\r", buffer);
         sprintf(buffer, "%s        |      |      |      |      |\n\r", buffer);
@@ -142,20 +142,20 @@ void control(int **arr){
         int move = 0;
         c = getch();
         switch(c){
-            case 'k':
+            case 'w':
                 move = combine(arr);
                 break;
-            case 'h':
+            case 'a':
                 transpose(arr);
                 move = combine(arr);
                 transpose(arr);
                 break;
-            case 'j':
+            case 's':
                 reverse(arr);
                 move = combine(arr);
                 reverse(arr);
                 break;
-            case 'l':
+            case 'd':
                 transpose(arr);
                 reverse(arr);
                 move = combine(arr);
